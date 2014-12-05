@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  arrival_date: 2014-12-03
+  departure_date: 2014-12-03
+
+two:
+  location: MyString
+  arrival_date: 2014-12-03
+  departure_date: 2014-12-03
