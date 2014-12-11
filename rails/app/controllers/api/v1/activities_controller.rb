@@ -1,14 +1,28 @@
 class Api::V1::ActivitiesController < ApplicationController
   def index
-    render json: Activity.all
+    @activities = current_user.activities
+    render json: @activities
   end
 
   def show
-    render json: Activity.find(params[:id])
+    @activity = Activity.find(params[:id])
+    render json: @activity
+  end
+
+  def new
+    @activity = Activity.new
+    render json: @activity
   end
 
   def create
-    render json: Activity.create(activity_params)
+    @activity = current_user.activities.create(activity_params)
+    render json: @activity
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    @activity = @activity.update_attributes(activity_params)
+    render json: @activity
   end
 
   private
